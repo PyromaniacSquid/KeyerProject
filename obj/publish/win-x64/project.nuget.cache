@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "iAZuE4Mgvzc7CVt+7LcaJ72iDADcj+NaVEMfTrVurPaNNRKnHT6T6l8aJjuY2sNAkBdmTKQFbOirSdrivl/69Q==",
+  "success": true,
+  "projectFilePath": "M:\\KeyerTest\\KeyerProject\\KeyerProject.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mrsta\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\mrsta\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\mrsta\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.9\\microsoft.netcore.app.runtime.win-x64.6.0.9.nupkg.sha512",
+    "C:\\Users\\mrsta\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.9\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.9.nupkg.sha512",
+    "C:\\Users\\mrsta\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.9\\microsoft.aspnetcore.app.runtime.win-x64.6.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}
