@@ -67,10 +67,22 @@
 
   **Результат**
 
-  ![dude (2)](https://github.com/PyromaniacSquid/KeyerProject/assets/68219629/a2a3ee72-58e4-4ed7-b701-695d654412d6)
+  ![dudethebest](https://github.com/PyromaniacSquid/KeyerProject/assets/68219629/6f4c2c57-f5c3-4984-b3cb-e40edacd170b)
 
 </details>
 
+<details>
+  <summary>Тест 3. Слон на зеленом фоне с разной освещенностью</summary>
+
+  **Входное изображение**
+
+  ![elephant](https://github.com/PyromaniacSquid/KeyerProject/assets/68219629/e9813e0f-30dd-4f01-975e-be1209d757c7)
+
+  **Результат**
+  
+  ![elephant](https://github.com/PyromaniacSquid/KeyerProject/assets/68219629/d7adb48c-ed9c-4266-8dcc-37843cff10e3)
+
+</details>
 ---
 
 ### Метод
