@@ -24,3 +24,4 @@ M:\KeyerTest\KeyerProject\obj\Debug\net6.0-windows\refint\KeyerProject.dll
 M:\KeyerTest\KeyerProject\obj\Debug\net6.0-windows\KeyerProject.pdb
 M:\KeyerTest\KeyerProject\obj\Debug\net6.0-windows\KeyerProject.genruntimeconfig.cache
 M:\KeyerTest\KeyerProject\obj\Debug\net6.0-windows\ref\KeyerProject.dll
+M:\KeyerTest\KeyerProject\obj\Debug\net6.0-windows\KeyerProject_Content.g.cs

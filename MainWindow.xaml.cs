@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -100,17 +101,18 @@ namespace KeyerProject
         private Bitmap GenerateBitmap(int width, int height)
         {            
             var pixelBytes = new byte[width*height * 4];
-            for (int y = 0; y < height; y++)
+            System.Threading.Tasks.Parallel.For(0, width, x =>
+            //for (int y = 0; y < height; y++)
             {
-                for (int x = 0; x < width; x++)
+                for (int y = 0; y < height; y++)
                 {
                     PixelColor pc = pixels[x, y];
-                    pixelBytes[(y * width + x) * 4 + 0]=pc.B;
-                    pixelBytes[(y * width + x) * 4 + 1]=pc.G;
-                    pixelBytes[(y * width + x) * 4 + 2]=pc.R;
-                    pixelBytes[(y * width + x) * 4 + 3]=pc.A;
+                    pixelBytes[(y * width + x) * 4 + 0] = pc.B;
+                    pixelBytes[(y * width + x) * 4 + 1] = pc.G;
+                    pixelBytes[(y * width + x) * 4 + 2] = pc.R;
+                    pixelBytes[(y * width + x) * 4 + 3] = pc.A;
                 }
-            }
+            });
             var handle = GCHandle.Alloc(pixelBytes, GCHandleType.Pinned);
             IntPtr ptr = handle.AddrOfPinnedObject();
             Bitmap res = new Bitmap(
@@ -167,12 +169,13 @@ namespace KeyerProject
             // Автоматический подсчет k1 
             if (AutoChooseK1Box.IsChecked == true) k1 = 1 / (gK - k2 * bK);
 
-            for (int x = 0; x < width; x++)
+            System.Threading.Tasks.Parallel.For(0, width, x =>
+            //for (int x = 0; x < width; x++)
             {
                 for (int y = 0; y < height; y++)
                 {
                     if (pixels[x, y].A == 0) continue;
-                    
+
                     PixelColor curColor = pixels[x, y];
                     float r = curColor.R / 255f;
                     float g = curColor.G / 255f;
@@ -182,7 +185,7 @@ namespace KeyerProject
                     float alpha = 1 - k1 * (Math.Min(g, gK) - k2 * (k3 * b + (1 - k3) * r));
 
                     // Цвет переднего плана (R*alpha, G*alpha, B*alpha)
-                    float rT = (r - (1 - alpha) * rK);;
+                    float rT = (r - (1 - alpha) * rK); ;
                     float gT = (g - (1 - alpha) * gK);
                     float bT = (b - (1 - alpha) * bK);
 
@@ -198,13 +201,13 @@ namespace KeyerProject
                         pixels[x, y].R = (byte)(rT * 255);
                         pixels[x, y].G = (byte)(gT * 255);
                         pixels[x, y].B = (byte)(bT * 255);
-                        pixels[x, y].A = (byte)(255*alpha*(1f-blur_opacity));
+                        pixels[x, y].A = (byte)(255 * alpha * (1f - blur_opacity));
                     }
                     // Объекты переднего плана
                     else
-                        pixels[x, y].A = 255;  
+                        pixels[x, y].A = 255;
                 }
-            }
+            });
              
         }
         private void CopyMatrix(in PixelColor[,] source, PixelColor[,] dest)
